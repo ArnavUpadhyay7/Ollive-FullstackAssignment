@@ -2,8 +2,12 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "worker": "SERVICE_ROLE=worker node src/workers/inferenceLog.worker.js",
+    "worker:dev": "SERVICE_ROLE=worker nodemon src/workers/inferenceLog.worker.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,9 +16,11 @@
   "type": "commonjs",
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
+    "bullmq": "^5.34.0",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "ioredis": "^5.6.0",
     "mongoose": "^9.6.2"
   },
   "devDependencies": {
