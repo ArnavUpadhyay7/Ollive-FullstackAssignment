@@ -1,10 +1,20 @@
-function App() {
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { AppLayout } from './components/layout/AppLayout';
+import { ChatPage } from './pages/ChatPage';
+import { DashboardPage } from './pages/DashboardPage';
 
+function App() {
   return (
-    <div>
-      <h1 className="text-9xl text-center">Ollive.ai</h1>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route element={<AppLayout />}>
+          <Route index element={<ChatPage />} />
+          <Route path="dashboard" element={<DashboardPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

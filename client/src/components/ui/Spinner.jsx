@@ -1,0 +1,8 @@
+export function Spinner({ className = 'h-5 w-5' }) {
+  return (
+    <span
+      className={`inline-block animate-spin rounded-full border-2 border-zinc-600 border-t-violet-400 ${className}`}
+      aria-hidden="true"
+    />
+  );
+}
