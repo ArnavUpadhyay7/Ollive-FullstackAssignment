@@ -1,6 +1,6 @@
 import { MessageList } from './MessageList';
 import { ChatInput } from './ChatInput';
-import { ErrorToast } from '../../../components/ui/ErrorBanner';
+import { ErrorBanner } from '../../../components/ui/ErrorBanner';
 
 export function ChatPanel({
   messages,
@@ -36,7 +36,7 @@ export function ChatPanel({
       {/* Error toast — top right, non-blocking */}
       {error && (
         <div className="absolute right-4 top-4 z-40 md:right-6 md:top-6">
-          <ErrorToast message={error} onDismiss={onClearError} onRetry={onRetry} />
+          <ErrorBanner message={error} onDismiss={onClearError} onRetry={onRetry} />
         </div>
       )}
 
