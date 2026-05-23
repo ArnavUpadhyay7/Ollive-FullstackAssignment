@@ -16,9 +16,9 @@ export function ChatPanel({
   onRetry,
 }) {
   return (
-    <section className="flex min-w-0 flex-1 flex-col">
+    <section className="relative flex min-w-0 flex-1 flex-col bg-zinc-950">
       {error && (
-        <div className="px-4 pt-4">
+        <div className="absolute inset-x-0 top-0 z-10 px-4 pt-4">
           <ErrorBanner message={error} onDismiss={onClearError} onRetry={onRetry} />
         </div>
       )}
