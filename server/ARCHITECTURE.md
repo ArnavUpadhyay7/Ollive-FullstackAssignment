@@ -205,14 +205,6 @@ Starts: MongoDB, Redis, API (`:5000`), inference log worker.
 
 **Scale path:** Redis-backed cancel signals, multiple workers, read replicas for dashboard, TTL indexes on logs.
 
-## Interview talking points
-
-1. **Why services over fat controllers?** Testability, reuse (SDK + HTTP + worker share services).
-2. **Why queue logging?** Chat latency independent of DB write spikes; retries on failure.
-3. **Why provider factory?** Swap Gemini/OpenAI without touching chat service.
-4. **Why redact at ingest?** Defense in depth before data hits Mongo.
-5. **Why separate worker container?** Scale ingestion independently from API replicas.
-
 ## Local development (without Docker)
 
 ```bash
